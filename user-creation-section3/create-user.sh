@@ -8,7 +8,7 @@ then
     exit 1
 fi
 
-if [[ "${#} -gt 0" ]]
+if [[ "${#}" -gt 0 ]]
 then
     USERNAME=${1}
     shift
@@ -18,7 +18,7 @@ else
     read -p "Please enter the name of the new user: " NAME
 fi
 
-PASSWORD=$(date +%s%N | sha256 | head -c32)
+PASSWORD=$(date +%s%N | sha256sum | head -c32)
 
 useradd -m -c "${NAME}" "${USERNAME}"
 
