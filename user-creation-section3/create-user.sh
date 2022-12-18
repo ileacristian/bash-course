@@ -8,7 +8,7 @@ then
     exit 1
 fi
 
-if [[ "${#} -gt 0" ]]
+if [[ "${#} -gt 1" ]]
 then
     USERNAME=${1}
     shift
